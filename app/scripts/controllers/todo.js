@@ -29,9 +29,4 @@ angular.module('fgokAngularApp')
     	}
     	else { return false; }
     };
-  })
-  .filter('reverse', function() {
-	  return function(items) {
-	    return items.slice().reverse();
-		};
-	});
+  });

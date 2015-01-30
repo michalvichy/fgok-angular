@@ -10,7 +10,7 @@
 			</div>
 		</form>
 		<hr>
-		<div class="form-group" ng-repeat='todo in todos | reverse'>
+		<div class="form-group" ng-repeat='todo in todos'>
 			<span class="input-group">
 				<input ng-model='todo' class='form-control'>
 				<span class='alert-danger input-group-addon' ng-click='removeTodo($index)'>X</span>
