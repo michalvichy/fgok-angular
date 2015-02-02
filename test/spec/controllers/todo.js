@@ -20,27 +20,30 @@ describe('Controller: TodoCtrl', function () {
     it('add new todo to the list', function(){
       scope.todo = 'foobar';
       scope.addTodo();
-      expect(scope.todos.length).toBe(4);
+      expect(scope.todos.length).toBe(1);
     });
 
     it('checks if input is not empty string', function(){
       scope.todo = '';
       scope.addTodo();
-      expect(scope.todos.length).toBe(3);
+      expect(scope.todos.length).toBe(0);
     });
 
     it('checks if input is not undefined', function(){
       scope.addTodo();
-      expect(scope.todos.length).toBe(3);
+      expect(scope.todos.length).toBe(0);
     });
   });
 
-  it('should attach a list of todos to the scope', function () {
-    expect(scope.todos.length).toBe(3);
-  });
+  describe('#removeTodo', function() {
+    beforeEach(function() {
+      scope.todo = 'foobar';
+      scope.addTodo();      
+    })
 
-  it('Removes task from todos', function(){
-    scope.removeTodo();
-    expect(scope.todos.length).toBe(2);
+    it('Removes task from todos', function(){
+      scope.removeTodo(0);
+      expect(scope.todos.length).toBe(0);
+    });
   });
 });
